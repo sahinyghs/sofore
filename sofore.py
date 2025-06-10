@@ -12,14 +12,14 @@ def calculate_ear(eye):
     ear = (A + B) / (2.0 * C)
     return ear
 
-# Uyku alarmı: her karede çalsın
+# Uyku alarmı
 def play_sleep_alarm():
     if not pygame.mixer.get_init():
         pygame.mixer.init()
     pygame.mixer.music.load("wrong.wav")
     pygame.mixer.music.play()
 
-# Diğer durumlarda alarm: yalnızca bir kez çalsın
+# Diğer durumlarda alarm
 def play_once_alarm():
     if not pygame.mixer.get_init():
         pygame.mixer.init()
@@ -28,7 +28,7 @@ def play_once_alarm():
         pygame.mixer.music.play()
 
 # Parametreler
-EAR_THRESHOLD = 0.20
+EAR_THRESHOLD = 0.22
 CONSEC_FRAMES = 30  # yaklaşık 1.5 saniye
 eye_closed_counter = 0
 
@@ -66,11 +66,11 @@ while True:
 
         cv2.putText(frame, f"EAR: {ear:.2f}", (10, 450), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 0), 1)
 
-        # Gözleri çiz
+        # Göz çizimleri
         cv2.polylines(frame, [leftEye], True, (0, 255, 0), 1)
         cv2.polylines(frame, [rightEye], True, (0, 255, 0), 1)
 
-        # Uyuma kontrolü
+        # Uyku tespiti
         if ear < EAR_THRESHOLD:
             eye_closed_counter += 1
             if eye_closed_counter >= CONSEC_FRAMES:

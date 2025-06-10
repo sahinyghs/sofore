@@ -1,0 +1,10 @@
+# Temel bağımlılıklar
+numpy==2.3.0            # dizi/linear-algebra altyapısı :contentReference[oaicite:0]{index=0}
+opencv-python==4.11.0.86  # cv2 bağlayıcıları, GUI destekli :contentReference[oaicite:1]{index=1}
+dlib==20.0.0            # yüz algılama / landmark modeli :contentReference[oaicite:2]{index=2}
+pygame==2.6.1           # sesli uyarı çalmak için :contentReference[oaicite:3]{index=3}
+ultralytics==8.3.152    # YOLOv8 (PyTorch tabanlı) :contentReference[oaicite:4]{index=4}
+
+# Ultralytics’in altında dolaylı gelse de, sürüm eşleşmelerini kontrol etmek için ekledik
+torch==2.7.1            # PyTorch çekirdeği (CPU veya CUDA varyantını pip otomatik seçer) :contentReference[oaicite:5]{index=5}
+torchvision==0.22.1     # Görüntü yardımcı kütüphaneleri :contentReference[oaicite:6]{index=6}
